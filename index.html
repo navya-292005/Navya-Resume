@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio - Resume & Bio-data</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+        }
+        .page-content {
+            min-height: calc(100vh - 80px); /* Adjust height based on header/footer if needed */
+        }
+        .text-accent {
+            color: #06b6d4; /* Tailwind cyan-500 */
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Header and Navigation -->
+    <header class="shadow-lg sticky top-0 z-10" style="background-color: #161b22;">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-accent">Navya - Portfolio</h1>
+            <div class="space-x-4">
+                <button onclick="showPage('resume')" id="nav-resume" class="nav-button font-medium hover:text-accent transition duration-300 px-3 py-2 rounded-lg">
+                    Resume
+                </button>
+                <button onclick="showPage('biodata')" id="nav-biodata" class="nav-button font-medium hover:text-accent transition duration-300 px-3 py-2 rounded-lg">
+                    Bio-data
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto px-4 py-8 page-content">
+
+        <!-- RESUME PAGE (Initial View) -->
+        <section id="resume-page" class="page max-w-4xl mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl">
+            <h2 class="text-3xl font-extrabold mb-8 border-b-2 border-accent pb-2">Professional Resume</h2>
+
+            <!-- Contact/Summary -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold mb-2">Navya</h3>
+                <p class="text-gray-400">Software Engineer | Focused on scalable cloud architecture and intuitive UI/UX design.</p>
+                <p class="text-sm mt-2">
+                    <span class="mr-4">Email: navya.pro@example.com</span>
+                    <span class="mr-4">Phone: (91) 98765-43210</span>
+                    <span>LinkedIn: /in/navya-arch</span>
+                </p>
+            </div>
+
+            <!-- Experience -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold mb-4 text-accent">Experience</h3>
+                
+                <!-- Job 1 -->
+                <div class="border-l-4 border-gray-600 pl-4 mb-6">
+                    <h4 class="text-xl font-bold">Cloud Architect</h4>
+                    <p class="text-gray-300 font-medium">TechNova Solutions | 2020 – Present</p>
+                    <p class="text-sm text-gray-400 mb-2">Bengaluru, India</p>
+                    <ul class="list-disc list-inside text-gray-200 space-y-1 ml-4">
+                        <li>Led the migration of legacy services to a serverless architecture, reducing operational costs by 35%.</li>
+                        <li>Designed and implemented a CI/CD pipeline using GitHub Actions and Kubernetes, improving deployment frequency by 200%.</li>
+                        <li>Mentored a team of five junior developers on best practices for performance optimization and security.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="border-l-4 border-gray-600 pl-4">
+                    <h4 class="text-xl font-bold">Software Developer</h4>
+                    <p class="text-gray-300 font-medium">Innovate Corp | 2017 – 2020</p>
+                    <p class="text-sm text-gray-400 mb-2">Bengaluru, India</p>
+                    <ul class="list-disc list-inside text-gray-200 space-y-1 ml-4">
+                        <li>Developed responsive front-end components using React and TypeScript for a high-traffic e-commerce platform.</li>
+                        <li>Contributed to database schema design and optimized SQL queries, resulting in 40% faster transaction processing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills and Education -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Skills -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">Technical Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">JavaScript/React</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">AWS/GCP</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Kubernetes</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">CI/CD</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">NoSQL/PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">Education</h3>
+                    <div class="mb-4">
+                        <h4 class="font-bold">Computer Science</h4>
+                        <p class="text-gray-300">Indian Institute of Science (IISc), Bengaluru | 2016</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">B.S. Electrical Engineering</h4>
+                        <p class="text-gray-300">National Institute of Technology (NIT), Surathkal | 2014</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BIO-DATA PAGE -->
+        <section id="biodata-page" class="page hidden max-w-4xl mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl">
+            <h2 class="text-3xl font-extrabold mb-8 border-b-2 border-accent pb-2">Personal Bio-data</h2>
+
+            <!-- Personal Details -->
+            <div class="mb-8 p-4 border border-gray-700 rounded-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-accent">Personal Details</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-200">
+                    <div>
+                        <p class="font-medium">Date of Birth:</p>
+                        <p>15th May 1990</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Place of Birth:</p>
+                        <p>Bengaluru, India</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Marital Status:</p>
+                        <p>Single</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Nationality:</p>
+                        <p>Indian</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Languages Known:</p>
+                        <p>English, Hindi, Kannada, Telugu</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hobbies and Interests -->
+            <div class="mb-8 p-4 border border-gray-700 rounded-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-accent">Interests and Objectives</h3>
+                <div class="space-y-4 text-gray-200">
+                    <div>
+                        <p class="font-medium mb-1">Career Objective:</p>
+                        <p>To leverage deep expertise in cloud computing and large-scale systems to solve complex technical challenges and drive innovation in a dynamic, forward-thinking organization.</p>
+                    </div>
+                    <div>
+                        <p class="font-medium mb-1">Hobbies & Activities:</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">Backpacking</span>
+                            <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">Piano Composition</span>
+                            <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">Open Source Contributions</span>
+                            <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">Competitive Coding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reference Declaration -->
+            <div class="mt-8 pt-4 border-t border-gray-700 text-sm text-gray-400 italic">
+                <p>Declaration: I hereby declare that the above-furnished information is true to the best of my knowledge and belief.</p>
+                <p class="mt-2 text-right">Date: November 2025</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-xs text-gray-500 mt-8" style="background-color: #161b22;">
+        <p>&copy; 2025 Navya. All rights reserved. Designed for a single-page application experience.</p>
+    </footer>
+
+    <!-- JavaScript for Page Switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to handle page visibility
+            window.showPage = function(pageId) {
+                // Get all page sections and navigation buttons
+                const pages = document.querySelectorAll('.page');
+                const navButtons = document.querySelectorAll('.nav-button');
+
+                // Hide all pages and remove active styling from all buttons
+                pages.forEach(page => page.classList.add('hidden'));
+                navButtons.forEach(button => button.classList.remove('bg-gray-700', 'text-accent', 'font-extrabold'));
+                navButtons.forEach(button => button.classList.add('text-white', 'font-medium'));
+
+                // Show the requested page
+                const targetPage = document.getElementById(pageId + '-page');
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                }
+
+                // Add active styling to the clicked button
+                const targetButton = document.getElementById('nav-' + pageId);
+                if (targetButton) {
+                    targetButton.classList.add('bg-gray-700', 'text-accent', 'font-extrabold');
+                    targetButton.classList.remove('text-white', 'font-medium');
+                }
+
+                // Update URL for simple routing (optional, for history)
+                history.pushState(null, '', '#' + pageId);
+            };
+
+            // Initialize: Check hash for initial page or default to 'resume'
+            const initialPage = window.location.hash.substring(1) || 'resume';
+            showPage(initialPage);
+
+            // Handle back/forward button navigation
+            window.addEventListener('popstate', () => {
+                const currentPage = window.location.hash.substring(1) || 'resume';
+                showPage(currentPage);
+            });
+        });
+    </script>
+</body>
+</html>
